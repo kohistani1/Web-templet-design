@@ -1,0 +1,222 @@
+$white: #fff;
+$white-light: #eee;
+$dark-white: darken($white-light, 15%);
+$dark: #777;
+$dark-light: darken($dark, 20%);
+$black: #000;
+$orange: #e38957;
+$font-family: "Times New Roman";
+
+$font-size-h2: 2rem;
+$regular-font: 1.725rem;
+$fw-400: 400;
+$fw-600: 600;
+$fs-small: 1.4rem;
+$fs-medium: 1.8;
+$fs-large: 3.5;
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0 auto;
+  height: 100vw;
+  font-family: $font-family;
+  font-size: $regular-font;
+  font-weight: $fw-400;
+}
+h1 {
+  color: $black;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-size: $fs-large;
+  font-weight: $fw-600;
+}
+
+h2 {
+  font-size: $fs-medium;
+  color: $dark-white;
+  font-weight: $fw-600;
+}
+p {
+  font-family: $font-family;
+  font-weight: $fw-400;
+  color: $dark-white;
+}
+
+.h1-D-line-white {
+  color: $white;
+}
+.h1-single-line {
+  color: $black;
+}
+.fill-black {
+  background-color: $black;
+  color: $dark-white;
+  font-size: $fs-small;
+}
+.btn {
+  display: inline-block;
+  outline: none;
+  padding: 0.9rem;
+  border: 1px solid $dark-white;
+  font-size: 1.5rem;
+  align-self: flex-start;
+  min-width: 12.5rem;
+  text-align: center;
+  color: $white-light;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.p-special {
+  letter-spacing: 0.9rem;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+//same properties change class name
+.content-left {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  text-align: left;
+}
+.h1-white {
+  &--main {
+    display: block;
+  }
+  &--sub {
+    display: block;
+  }
+}
+
+// ================= header starts here ==================
+.header {
+  background: #0c0c0c;
+  height: 100vh;
+  &__content {
+    margin: 0 auto;
+    width: 70%;
+    height: 95vh;
+
+    // background: url("./images/hero-img.jpg") no-repeat 800px 80px /
+    //   50%;
+
+    &--nav {
+      color: $dark-white;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding-top: 1rem;
+
+      position: relative;
+
+      ul {
+        display: flex;
+        justify-content: flex-end;
+        li:not(:last-child) {
+          margin-right: 3rem;
+        }
+        li {
+          text-transform: uppercase;
+          list-style-type: none;
+          font-size: $fs-small;
+        }
+      }
+      &::after {
+        content: "";
+        width: 100%;
+        height: 1px;
+        background: $dark;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        margin-top: 2.5rem;
+      }
+    }
+  }
+  //nav ends here
+  //================ header main content ======
+  .header__content--main {
+    width: auto;
+    // padding: 1rem;
+    margin-top: 4rem;
+    display: flex;
+    justify-content: flex-start;
+
+    .fill-orange {
+      margin-top: 1.5rem;
+      background: $orange;
+      color: $white;
+      font-weight: $fw-400;
+      font-size: $fs-small;
+      border: none;
+    }
+  }
+  .img-right {
+    min-width: 55%;
+    height: 80vh;
+    float: right;
+    img {
+      width: 120%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 35%;
+    }
+  }
+}
+
+.main-container {
+  width: 70%;
+  margin: 0 auto;
+  .main-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+
+    &--item {
+      height: 20rem;
+      border-radius: 5px;
+    }
+    .item {
+      &--1 {
+        margin-top: 2rem;
+
+        height: 35rem;
+        background: $orange url("./images/item-1.png") no-repeat -3rem -5rem;
+        background-size: 50%;
+        grid-column: span 2;
+        display: flex;
+        position: relative;
+        .content {
+          width: 50%;
+          position: absolute;
+          left: 46%;
+          top: 28%;
+        }
+      }
+      &--2 {
+        background: #99999b url("./images/item-2.jpg") no-repeat 34rem -35rem;
+        grid-column: span 2;
+        background-size: cover;
+      }
+      &--3 {
+        background: url("./images/item-1.jpg");
+        grid-column: span 1;
+      }
+      &--4 {
+        background: url("./images/item-1.jpg");
+        grid-column: span 1;
+      }
+    }
+  }
+}
