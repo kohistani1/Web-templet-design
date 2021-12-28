@@ -16,6 +16,13 @@ $fw-600: 600;
 $fs-small: 1.4rem;
 $fs-medium: 1.8;
 $fs-large: 3.5;
+
+// media manager
+@mixin mediaMobile {
+  @media (max-width: 600px) {
+    @content;
+  }
+}
 *,
 *::after,
 *::before {
@@ -143,6 +150,9 @@ ul {
 .header {
   background: #0c0c0c;
   height: 100vh;
+  @include mediaMobile {
+    background-color: #fff;
+  }
 
   &__content {
     margin: 0 auto;
@@ -163,19 +173,6 @@ ul {
         height: 2rem;
         width: 3rem;
       }
-
-      // ul {
-      //   display: flex;
-      //   justify-content: space-between;
-      //   li:not(:last-child) {
-      //     margin-right: 3rem;
-      //   }
-      //   li {
-      //     text-transform: uppercase;
-      //     list-style-type: none;
-      //     font-size: $fs-small;
-      //   }
-      // }
 
       &::after {
         content: "";
@@ -249,6 +246,14 @@ ul {
       background: $bg-dark;
       color: $black;
     }
+    @include mediaMobile() {
+      flex-direction: column;
+      gap: 8rem;
+      width: 110%;
+      .main__items {
+        width: 100%;
+      }
+    }
   }
 
   .main-grid {
@@ -314,6 +319,35 @@ ul {
         }
       }
     }
+    @include mediaMobile() {
+      display: flex;
+      flex-direction: column;
+      .main-grid--item {
+        width: 85%;
+        margin: 0 auto;
+      }
+
+      .item {
+        &--1 {
+          padding: 2rem;
+          height: 75rem;
+
+          background: #f89965 url(./images/item-1.png) no-repeat 1rem 3rem;
+          // background-size: 80%;
+          text-align: center;
+          .content {
+            margin-top: 24rem;
+            position: relative;
+            position: static;
+            text-align: center;
+            gap: 4rem;
+            .btn {
+              margin-left: 9rem;
+            }
+          }
+        }
+      }
+    }
   }
   .main-footer {
     display: flex;
@@ -348,6 +382,10 @@ ul {
         filter: grayscale(100%);
       }
     }
+  }
+  @include mediaMobile() {
+    width: 85%;
+    margin: 0 auto;
   }
 }
 // ========= footer is here ====
