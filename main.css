@@ -19,6 +19,13 @@ body {
   font-weight: 400;
 }
 
+@media (max-width: 600px) {
+  body {
+    width: 85%;
+    margin: 0 auto;
+  }
+}
+
 img {
   height: 100%;
   width: 100%;
@@ -275,7 +282,6 @@ ul li {
         -ms-flex-direction: column;
             flex-direction: column;
     gap: 8rem;
-    width: 110%;
   }
   .main-container .main-top .main__items {
     width: 100%;
@@ -364,26 +370,58 @@ ul li {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-  }
-  .main-container .main-grid .main-grid--item {
-    width: 85%;
-    margin: 0 auto;
+    position: relative;
   }
   .main-container .main-grid .item--1 {
     padding: 2rem;
     height: 75rem;
-    background: #f89965 url(./images/item-1.png) no-repeat 1rem 3rem;
+    background: #f89965 url(./images/item-1.png) no-repeat 5rem 5rem;
     text-align: center;
   }
   .main-container .main-grid .item--1 .content {
-    margin-top: 24rem;
+    margin: 24rem auto 0;
     position: relative;
     position: static;
     text-align: center;
     gap: 4rem;
   }
   .main-container .main-grid .item--1 .content .btn {
-    margin-left: 9rem;
+    margin: 0 auto;
+  }
+  .main-container .main-grid .item--2 {
+    background: #e1e1df url(./images/speaker-bg.png) no-repeat 20rem -11rem;
+    background-size: 100%;
+  }
+  .main-container .main-grid .item--2 .content-left {
+    margin: 6rem;
+    gap: 2rem;
+    font-size: 1rem;
+  }
+  .main-container .main-grid .item--2 .content-left .btn {
+    padding: 1rem 2rem;
+  }
+  .main-container .main-grid .item--3 {
+    width: 50%;
+    display: inline-block;
+    position: relative;
+  }
+  .main-container .main-grid .item--3 img {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+  .main-container .main-grid .item--4 {
+    width: 50%;
+    position: absolute;
+    bottom: -5rem;
+    right: 0;
+  }
+  .main-container .main-grid .item--4 .content-left {
+    margin: 6rem;
+    gap: 2rem;
+    font-size: 1rem;
+  }
+  .main-container .main-grid .item--4 .content-left .btn {
+    padding: 1rem 2rem;
   }
 }
 
@@ -433,8 +471,41 @@ ul li {
 
 @media (max-width: 600px) {
   .main-container {
-    width: 85%;
+    width: 87vw;
+    padding: 0;
     margin: 0 auto;
+  }
+  .main-container .main-footer {
+    margin-top: 5rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .main-container .main-footer .footer__content {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    min-height: 30rem;
+    gap: 3rem;
+    text-align: center;
+  }
+  .main-container .main-footer .footer__img {
+    -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+            order: 0;
+    min-height: 20rem;
+    width: 100%;
+    border: none;
+  }
+  .main-container .main-footer .footer__img img {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+    -o-object-position: 8rem -1rem;
+       object-position: 8rem -1rem;
   }
 }
 
@@ -445,6 +516,14 @@ ul li {
   width: 100vw;
   height: auto;
   background-color: #000;
+}
+
+@media (max-width: 600px) {
+  .footer .footer {
+    width: inherit;
+    margin: 0;
+    overflow: hidden;
+  }
 }
 
 .footer .footer-container {

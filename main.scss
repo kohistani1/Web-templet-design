@@ -40,6 +40,10 @@ body {
   font-family: $font-family;
   font-size: $regular-font;
   font-weight: $fw-400;
+  @include mediaMobile() {
+    width: 85%;
+    margin: 0 auto;
+  }
 }
 img {
   height: 100%;
@@ -249,7 +253,7 @@ ul {
     @include mediaMobile() {
       flex-direction: column;
       gap: 8rem;
-      width: 110%;
+
       .main__items {
         width: 100%;
       }
@@ -322,9 +326,8 @@ ul {
     @include mediaMobile() {
       display: flex;
       flex-direction: column;
+      position: relative;
       .main-grid--item {
-        width: 85%;
-        margin: 0 auto;
       }
 
       .item {
@@ -332,17 +335,53 @@ ul {
           padding: 2rem;
           height: 75rem;
 
-          background: #f89965 url(./images/item-1.png) no-repeat 1rem 3rem;
+          background: #f89965 url(./images/item-1.png) no-repeat 5rem 5rem;
           // background-size: 80%;
           text-align: center;
           .content {
-            margin-top: 24rem;
+            margin: 24rem auto 0;
             position: relative;
             position: static;
             text-align: center;
             gap: 4rem;
             .btn {
-              margin-left: 9rem;
+              margin: 0 auto;
+            }
+          }
+        }
+        &--2 {
+          background: #e1e1df url(./images/speaker-bg.png) no-repeat 20rem -11rem;
+          background-size: 100%;
+
+          .content-left {
+            margin: 6rem;
+            gap: 2rem;
+            font-size: 1rem;
+            .btn {
+              padding: 1rem 2rem;
+            }
+          }
+        }
+        &--3 {
+          width: 50%;
+          display: inline-block;
+          position: relative;
+          img {
+            transform: scale(1.5);
+          }
+        }
+        &--4 {
+          width: 50%;
+          position: absolute;
+          bottom: -5rem;
+          right: 0;
+          .content-left {
+            margin: 6rem;
+            gap: 2rem;
+            font-size: 1rem;
+
+            .btn {
+              padding: 1rem 2rem;
             }
           }
         }
@@ -384,8 +423,30 @@ ul {
     }
   }
   @include mediaMobile() {
-    width: 85%;
+    width: 87vw;
+    padding: 0;
     margin: 0 auto;
+    .main-footer {
+      margin-top: 5rem;
+      display: flex;
+      flex-direction: column;
+      .footer__content {
+        order: 1;
+        min-height: 30rem;
+        gap: 3rem;
+        text-align: center;
+      }
+      .footer__img {
+        order: 0;
+        min-height: 20rem;
+        width: 100%;
+        border: none;
+        img {
+          transform: scale(1.5);
+          object-position: 8rem -1rem;
+        }
+      }
+    }
   }
 }
 // ========= footer is here ====
@@ -396,6 +457,13 @@ ul {
   width: 100vw;
   height: auto;
   background-color: $black;
+  @include mediaMobile() {
+    .footer {
+      width: inherit;
+      margin: 0;
+      overflow: hidden;
+    }
+  }
   .footer-container {
     display: flex;
     width: 70%;
